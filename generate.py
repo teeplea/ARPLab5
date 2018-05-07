@@ -21,9 +21,9 @@ def main():
             print(enrichment)
             generated_input = template \
                     .replace("$ENRICHMENT", str(enrichment)) \
-                    .replace("$SIM_NAME", str(int(enrichment * 100)))
+                    .replace("$SIM_NAME", str(int(enrichment * 1000)))
             out_file_name = sys.argv[1].replace("ENRICHMENT",
-                    str(int(enrichment * 100)))
+                    str(int(enrichment * 1000)))
             print(out_file_name)
             out_file = open(out_file_name, 'w')
             out_file.write(generated_input)
