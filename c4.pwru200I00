@@ -18,8 +18,8 @@ PIN 1   0.410   0.417   0.475 * FUEL PIN
 
 ***** SEGMENT SPECIFIC
 *      SEGNAME
-SIM, 'PWRU200C00'
-FUE 1, 10.34 / 2.00
+SIM, 'PWRU$SIM_NAMEC00'
+FUE 1, 10.34 / $ENRICHMENT
 
 BP3 // 5010 = 0.925                             * IFBA absorber mg/cm
 
