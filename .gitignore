@@ -1,3 +1,9 @@
+run_casmo.sh
+run_cmslink.sh
+cmspwrm.inp
+cmspwrm.out
+NOBP*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
