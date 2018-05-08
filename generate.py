@@ -1,16 +1,14 @@
 import sys
 import numpy as np
-from decimal import Decimal
-
 
 def main():
     if not len(sys.argv) == 5:
         print("Usage: generate.py <template_file> <min> <max> <increment>")
         return 1
 
-    min_enrichment = Decimal(sys.argv[2])
-    max_enrichment = Decimal(sys.argv[3])
-    enrichment_increment = Decimal(sys.argv[4])
+    min_enrichment = float(sys.argv[2])
+    max_enrichment = float(sys.argv[3])
+    enrichment_increment = float(sys.argv[4])
 
     with open(sys.argv[1]) as template:
         template = template.read()
