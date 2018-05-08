@@ -1,5 +1,6 @@
 """
-Simplified script to generate lots of CASMO inputs.
+Simplified script to generate lots of CASMO inputs, and shell file to 
+run them all, and a file to produce the CMSlink-generated SIMULATE library.
 """
 
 import numpy as np
@@ -12,9 +13,9 @@ template_ifba = open('ifba.tmpl', 'r').read()
 increment = 0.25
 enrichments = np.arange(2.0, 4.5+increment, increment)
 
-# generate run script for running these all at once
-# but not in python
-run_script = ''
+# generate shell script that runs all the CASMO inputs generated
+casmo_script = ''
+cmslink_script = ''
 
 for e in enrichments:
    
@@ -30,9 +31,15 @@ for e in enrichments:
     f.write(template_ifba.format(sim_name, e))
     f.close()
 
-    run_script += 'casmo4 -k {}\n'.format(nobp)
-    run_script += 'casmo4 -k {}\n'.format(ifba)
+    casmo_script += 'casmo4 -k {}\n'.format(nobp)
+    casmo_script += 'casmo4 -k {}\n'.format(ifba)
+
+    cmslink_script
 
 f = open('run_casmo.sh', 'w')
-f.write(run_script)
+f.write(casmo_script)
+f.close()
+
+f = open('run_cmslink.sh', 'w')
+f.write(cmslink_script)
 f.close()
